@@ -13,7 +13,7 @@ if os.path.islink(exefile):
 
 os.chdir(os.path.dirname(os.path.abspath(exefile)))
 
-location = 'common/facility'
+location = 'facility'
 
 wikiurl = 'https://mhworld.kiranico.com'
 idurl = 'https://mhw.poedb.tw/cht/rawitems'
