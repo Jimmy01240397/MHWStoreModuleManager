@@ -13,7 +13,7 @@ if os.path.islink(exefile):
 
 os.chdir(os.path.dirname(os.path.abspath(exefile)))
 
-location = 'facility'
+location = 'common/facility'
 
 wikiurl = 'https://mhworld.kiranico.com'
 idurl = 'https://mhw.poedb.tw/cht/rawitems'
@@ -48,9 +48,9 @@ def nametoid(name):
 
 def idtopage(id):
     id -= 1
-    print(f"storeindex: {int(id / 255)}")
-    print(f"page: {int((id % 255) / 11) + 1}")
-    print(f"index: {((id % 255) % 11) + 1}")
+    print(f"Shop List Index: {int(id / 255)}")
+    print(f"Shop Page: {int((id % 255) / 11) + 1}")
+    print(f"Item index in Shop Page: {((id % 255) % 11) + 1}")
     return int(id / 255)
 
 def reset():
