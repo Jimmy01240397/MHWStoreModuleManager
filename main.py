@@ -62,6 +62,7 @@ def reset():
 
 def main(argv=()):
     page = -1
+    rundirectly = False
     if args.page != -1:
         page = args.page
     elif args.id != -1:
@@ -71,12 +72,16 @@ def main(argv=()):
     elif args.reset:
         pass
     else:
+        rundirectly = True
         name = input('Please enter your search item name: ')
         page = idtopage(nametoid(name))
 
     reset()
     if page != -1:
         os.rename(os.path.join(location, f'shopList_{str(page).zfill(2)}.slt'), os.path.join(location, 'shopList.slt'))
+    
+    if rundirectly:
+        input("Press Enter to continue...")
 
 flags.DEFINE_string('name', '', 'Item name')
 flags.DEFINE_integer('id', -1, 'Item id')
