@@ -71,8 +71,8 @@ def main(argv=()):
     elif args.reset:
         pass
     else:
-        print(f'Use "{__file__} --help" to show help.')
-        sys.exit(1)
+        name = input('Please enter your search item name: ')
+        page = idtopage(nametoid(name))
 
     reset()
     if page != -1:
