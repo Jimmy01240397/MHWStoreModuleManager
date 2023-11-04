@@ -18,6 +18,7 @@ A Monster Hunter World store module manager
 ![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/6a20e0cb-766f-4a53-8b4b-fb3efb500aae)
 
 ## Usage
+### Basic
 1. Run `MHWStoreModuleManager.exe`
 
 2. Enter your search item name with Chinese
@@ -28,3 +29,14 @@ A Monster Hunter World store module manager
 
 4. It will show this item's `Shop List Index`, `Shop Page` and `Item index in Shop Page`
 
+### Advanced
+1. Use `terminal`
+![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/fe68ee0f-41a4-4c17-9163-174c52b7bf70)
+
+2. cd into path `<your Monster Hunter World directory>\nativePC` for example `C:\Program Files (x86)\Steam\steamapps\common\Monster Hunter World\nativePC`
+![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/c54fd914-d83d-4238-b6d1-051393517db0)
+
+3. Run `.\MHWStoreModuleManager.exe --help` to get full usage
+![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/91a95b47-af87-46c4-ae95-f0fe244b9757)
+
+   
