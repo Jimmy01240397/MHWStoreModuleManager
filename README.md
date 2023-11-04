@@ -16,6 +16,7 @@ A Monster Hunter World store module manager
 4. Add `MHWStoreModuleManager.exe` shortcut to Desktop and rename the shortcut to `MHWStoreModuleManager`
 ![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/b7f5d7dc-19bd-452b-a0d9-1584bcfccd95)
 ![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/6a20e0cb-766f-4a53-8b4b-fb3efb500aae)
+5. Restart your `Monster Hunter World` game
 
 ## Usage
 ### Basic
