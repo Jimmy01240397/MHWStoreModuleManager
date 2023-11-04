@@ -32,6 +32,9 @@ def nametoid(name):
             index = int(input('> '))
             assert index < len(data['hits'])
             break
+        except KeyboardInterrupt:
+            print('Canceled')
+            exit(1)
         except:
             pass
 
