@@ -34,7 +34,7 @@ def nametoid(name):
             break
         except KeyboardInterrupt:
             print('Canceled')
-            exit(1)
+            sys.exit(1)
         except:
             pass
 
@@ -72,7 +72,7 @@ def main(argv=()):
         pass
     else:
         print(f'Use "{__file__} --help" to show help.')
-        exit(1)
+        sys.exit(1)
 
     reset()
     if page != -1:
