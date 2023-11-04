@@ -28,6 +28,7 @@ A Monster Hunter World store module manager
 ![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/209d0787-e688-4477-afb9-edee94d299a9)
 
 4. It will show this item's `Shop List Index (start at 0)`, `Shop Page (start at 1)` and `Item index in Shop Page (start at 0)`
+![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/9f7c3a56-f4e0-4cba-a85e-ea1b0f65b0a9)
 
 ### Advanced
 1. Use `terminal`
