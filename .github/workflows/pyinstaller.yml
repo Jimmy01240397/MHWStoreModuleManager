@@ -1,0 +1,31 @@
+name: Package Application with Pyinstaller
+
+on:
+  push:
+    branches: [ "master" ]
+    tags:
+    - '*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Package Application
+      uses: JackMcKew/pyinstaller-action-windows@main
+      with:
+        path: .
+    - uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r common.zip common
+    - uses: actions/upload-artifact@v2
+      with:
+        name: name-of-artifact
+        path: |
+          dist/windows
+          common.zip
+
