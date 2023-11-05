@@ -22,7 +22,7 @@ A Monster Hunter World store module manager
 ### Basic
 1. Run `MHWStoreModuleManager.exe`
 
-2. Enter your search item name with Chinese
+2. Enter your search item name
 ![image](https://github.com/Jimmy01240397/MHWStoreModuleManager/assets/57281249/a3d84d09-9438-4918-880a-81b3b45e775b)
 
 3. Enter your target index
