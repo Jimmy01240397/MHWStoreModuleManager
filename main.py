@@ -21,16 +21,21 @@ idurl = 'https://mhw.poedb.tw/cht/rawitems'
 def nametoid(name):
     apikey = re.search('(?<=apiKey: )"[a-z0-9]+"', requests.get(wikiurl).text).group(0).replace('"', '')
     searchdata = {"q": name,"attributesToHighlight":["*"],"attributesToCrop":["content"],"cropLength":30}
-    searchresult = requests.post('https://search.kiranico.gg/indexes/mhworld_zh-Hant_docsearch/search', headers={'Authorization': f'Bearer {apikey}'}, json=searchdata)
-    data = searchresult.json()
+    languagelist = re.findall('<a href="https://mhworld.kiranico.com/([a-zA-Z\-]+)">.+</a>', requests.get(f'{wikiurl}/en').text)
+
+    data = []
+    for a in languagelist:
+        searchresult = requests.post(f'https://search.kiranico.gg/indexes/mhworld_{a}_docsearch/search', headers={'Authorization': f'Bearer {apikey}'}, json=searchdata)
+        data += searchresult.json()['hits']
+
     print("select your target:")
-    for i, a in enumerate(data['hits']):
+    for i, a in enumerate(data):
         print(f"{i}: {a['lvl2']}")
 
     while True:
         try:
             index = int(input('> '))
-            assert index < len(data['hits'])
+            assert index < len(data)
             break
         except KeyboardInterrupt:
             print('Canceled')
@@ -38,7 +43,7 @@ def nametoid(name):
         except:
             pass
 
-    enname = BeautifulSoup(requests.get(BeautifulSoup(re.search('<a href=".*?">English</a>', requests.get(f"{wikiurl}{data['hits'][index]['url']}").text).group(0), 'html.parser').a['href']).text, 'html.parser').find_all("div", class_="align-self-center")[0].string
+    enname = BeautifulSoup(requests.get(BeautifulSoup(re.search('<a href=".*?">English</a>', requests.get(f"{wikiurl}{data[index]['url']}").text).group(0), 'html.parser').a['href']).text, 'html.parser').find_all("div", class_="align-self-center")[0].string
 
     rows = re.findall('<tr><td>([0-9]+?)<td>[0-9]+?<td>[0-9]+?<td>[0-9]+?<td>([^<]+)', requests.get(idurl).text)
     data = {key: value for value, key in rows}
